@@ -5,8 +5,11 @@ function add_menu_icons_styles(){
 ?>
 
 <style>
-#menu-posts-project .dashicons-admin-post:before {
-    content: '\f319';
+#menu-posts-film .dashicons-admin-post:before {
+    content: '\f235';
+}
+#menu-posts-short .dashicons-admin-post:before {
+    content: '\f235';
 }
 </style>
 
@@ -16,23 +19,23 @@ add_action( 'admin_head', 'add_menu_icons_styles' );
 
 
 //Register Custom Post Types
-add_action( 'init', 'register_cpt_project' );
+add_action( 'init', 'register_cpt_film' );
 
-function register_cpt_project() {
+function register_cpt_film() {
 
   $labels = array(
-    'name' => _x( 'Projects', 'project' ),
-    'singular_name' => _x( 'Project', 'project' ),
-    'add_new' => _x( 'Add New', 'project' ),
-    'add_new_item' => _x( 'Add New Project', 'project' ),
-    'edit_item' => _x( 'Edit Project', 'project' ),
-    'new_item' => _x( 'New Project', 'project' ),
-    'view_item' => _x( 'View Project', 'project' ),
-    'search_items' => _x( 'Search Projects', 'project' ),
-    'not_found' => _x( 'No projects found', 'project' ),
-    'not_found_in_trash' => _x( 'No projects found in Trash', 'project' ),
-    'parent_item_colon' => _x( 'Parent Project:', 'project' ),
-    'menu_name' => _x( 'Projects', 'project' ),
+    'name' => _x( 'Films', 'film' ),
+    'singular_name' => _x( 'Film', 'film' ),
+    'add_new' => _x( 'Add New', 'film' ),
+    'add_new_item' => _x( 'Add New Film', 'film' ),
+    'edit_item' => _x( 'Edit Film', 'film' ),
+    'new_item' => _x( 'New Film', 'film' ),
+    'view_item' => _x( 'View Film', 'film' ),
+    'search_items' => _x( 'Search Films', 'film' ),
+    'not_found' => _x( 'No films found', 'film' ),
+    'not_found_in_trash' => _x( 'No films found in Trash', 'film' ),
+    'parent_item_colon' => _x( 'Parent Film:', 'film' ),
+    'menu_name' => _x( 'Films', 'film' ),
   );
 
   $args = array(
@@ -56,5 +59,48 @@ function register_cpt_project() {
     'capability_type' => 'post'
   );
 
-  register_post_type( 'project', $args );
+  register_post_type( 'film', $args );
+}
+
+add_action( 'init', 'register_cpt_short' );
+
+function register_cpt_short() {
+
+  $labels = array(
+    'name' => _x( 'Shorts', 'short' ),
+    'singular_name' => _x( 'Short', 'short' ),
+    'add_new' => _x( 'Add New', 'short' ),
+    'add_new_item' => _x( 'Add New Short', 'short' ),
+    'edit_item' => _x( 'Edit Short', 'short' ),
+    'new_item' => _x( 'New Short', 'short' ),
+    'view_item' => _x( 'View Short', 'short' ),
+    'search_items' => _x( 'Search Shorts', 'short' ),
+    'not_found' => _x( 'No shorts found', 'short' ),
+    'not_found_in_trash' => _x( 'No shorts found in Trash', 'short' ),
+    'parent_item_colon' => _x( 'Parent Short:', 'short' ),
+    'menu_name' => _x( 'Shorts', 'short' ),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => false,
+
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
+
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'menu_position' => 5,
+
+    'show_in_nav_menus' => true,
+    'publicly_queryable' => true,
+    'exclude_from_search' => false,
+    'has_archive' => true,
+    'query_var' => true,
+    'can_export' => true,
+    'rewrite' => true,
+    'capability_type' => 'post'
+  );
+
+  register_post_type( 'short', $args );
 }
