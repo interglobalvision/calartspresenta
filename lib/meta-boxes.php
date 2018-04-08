@@ -39,5 +39,39 @@ function igv_cmb_metaboxes() {
    * Reference: https://github.com/WebDevStudios/CMB2/blob/master/example-functions.php
    */
 
+  $film_metabox = new_cmb2_box( array(
+		'id'            => $prefix . 'film-metabox',
+		'title'         => esc_html__( 'Details', 'cmb2' ),
+		'object_types'  => array( 'film', 'short' ), // Post type
+		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+		// 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
+	) );
+
+  $film_metabox->add_field( array(
+		'name' => esc_html__( 'Date', 'cmb2' ),
+		'id'   => $prefix . 'film_date',
+		'type' => 'text_date',
+		// 'date_format' => 'Y-m-d',
+	) );
+
+  $film_metabox->add_field( array(
+		'name' => esc_html__( 'Start Time', 'cmb2' ),
+		'id'   => $prefix . 'film_time',
+		'type' => 'text_time',
+		// 'time_format' => 'H:i', // Set to 24hr format
+	) );
+
+  $film_metabox->add_field( array(
+		'name' => esc_html__( 'Duration', 'cmb2' ),
+		'id'   => $prefix . 'film_duration',
+		'type' => 'text_small',
+	) );
+
 }
 ?>
