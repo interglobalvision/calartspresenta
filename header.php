@@ -30,6 +30,10 @@ get_template_part('partials/seo');
 
   <header id="header">
     <div class="container">
-      <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+      <div class="grid-row">
+        <div class="grid-item">
+          <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+        </div>
+      </div>
     </div>
   </header>
