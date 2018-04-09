@@ -26,13 +26,13 @@ get_template_part('partials/seo');
 <body <?php body_class(); ?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-<section id="main-container">
+<section id="main-container" class="padding-top-large padding-bottom-large">
 
   <header id="header">
     <div class="container">
-      <div class="grid-row">
+      <div class="grid-row padding-bottom-basic">
         <div class="grid-item">
-          <h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+          <h1 class="font-size-mid color-blue"><a href="<?php echo home_url(); ?>">CALARTS presenta...</a></h1>
         </div>
       </div>
     </div>
