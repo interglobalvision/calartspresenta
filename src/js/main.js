@@ -24,6 +24,7 @@ class Site {
   onReady() {
     lazySizes.init();
 
+    this.bindAjax();
   }
 
   fixWidows() {
@@ -33,6 +34,19 @@ class Site {
       string = string.replace(/ ([^ ]*)$/,'&nbsp;$1');
       $(this).html(string);
     });
+  }
+
+  bindAjax() {
+    $('.js-open-film').on('click', function() {
+      var filmUrl = $(this).attr('data-url');
+
+      $.ajax({
+        url: filmUrl
+      })
+      .done(function( html ) {
+        $("#drawer").html($(html).find('#content').html());
+      });
+    })
   }
 }
 
