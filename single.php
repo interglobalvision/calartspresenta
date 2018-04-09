@@ -41,7 +41,7 @@ if (have_posts()) {
         $order = get_post_meta($program_id, '_igv_order_number', true);
         $datetime = get_post_meta($program_id, '_igv_program_datetime', true);
 ?>
-          <div class="grid-row">
+          <div class="grid-row color-blue">
             <div class="grid-item item-m-3">
               <?php echo !empty($venue) ? $venue : '&nbsp;'; ?>
             </div>

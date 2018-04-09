@@ -60,21 +60,21 @@ if ( $program_query->have_posts() ) {
           <div class="grid-row color-blue margin-bottom-small">
             <div class="grid-item item-s-10 offset-s-2 grid-row margin-bottom-tiny no-gutter">
               <div class="grid-item item-s-12 grid-row margin-bottom-tiny no-gutter">
-                <div class="grid-item item-s-4 font-uppercase">
+                <div class="grid-item item-s-4 item-m-3 font-uppercase">
                   <?php echo !empty($datetime) ? date_i18n('l', $datetime) : '&nbsp;'; ?>
                 </div>
-                <div class="grid-item item-s-4 font-uppercase">
+                <div class="grid-item item-s-4 item-m-3 font-uppercase">
                   <?php echo !empty($datetime) ? date_i18n('j F', $datetime) : '&nbsp;'; ?>
                 </div>
-                <div class="grid-item item-s-4 font-uppercase">
+                <div class="grid-item item-s-4 item-m-3 font-uppercase">
                   <?php echo !empty($datetime) ? date_i18n('g:i A', $datetime) : '&nbsp;'; ?>
                 </div>
               </div>
               <div class="grid-item item-s-12 grid-row no-gutter">
-                <div class="grid-item item-s-4">
+                <div class="grid-item item-s-4 item-m-3">
                   <?php echo !empty($venue) ? $venue : '&nbsp;'; ?>
                 </div>
-                <div class="grid-item item-s-8">
+                <div class="grid-item item-s-8 item-m-9">
                   <?php echo ($qa === 'qa') ? 'Q & A' : ''; ?>
                   <?php echo ($qa === 'qa_with') ? 'Q & A con traducción' : ''; ?>
                 </div>
@@ -105,7 +105,7 @@ if ( $program_query->have_posts() ) {
         $directors = wp_get_post_terms($film_id, 'director');
 ?>
               <div class="grid-item item-s-6 grid-row">
-                <div class="grid-item item-s-12 no-gutter">
+                <div class="grid-item item-s-12 no-gutter padding-bottom-micro">
                   <a class="u-pointer js-open-film link-underline font-size-mid" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
                 </div>
                 <div class="grid-item item-s-12 no-gutter color-blue">
@@ -148,7 +148,9 @@ if (!empty($long_description)) {
   <div id="close-overlay" class="u-pointer"></div>
   <div id="drawer" class="padding-top-large padding-bottom-large">
     <div class="drawer-container">
-      <div id="close-drawer" class="u-pointer font-uppercase">Close</div>
+      <div id="close-drawer">
+        <a class="link-underline font-uppercase u-pointers">Close</a>
+      </div>
       <div id="drawer-content">
       </div>
     </div>
