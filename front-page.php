@@ -104,7 +104,7 @@ if ( $program_query->have_posts() ) {
         $year = get_post_meta($film_id, '_igv_film_year', true);
         $directors = wp_get_post_terms($film_id, 'director');
 ?>
-              <div class="grid-item item-s-6 grid-row">
+              <div class="grid-item item-s-6 grid-row margin-bottom-small">
                 <div class="grid-item item-s-12 no-gutter padding-bottom-micro">
                   <a class="u-pointer js-open-film link-underline font-size-mid" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
                 </div>
