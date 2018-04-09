@@ -21,8 +21,11 @@ normalize()
 // FONTS
 @import 'fonts/fonts'
 
-$font-sans = font-stack('Helvetica')
-$font-serif = font-stack('Georgia')
+$font-sans = 'Alte Haas Grotesk', font-stack('Helvetica')
+$font-serif = 'Jude Bold', font-stack('Georgia')
+
+$font-serif-italic = 'Jude Regular Italic', font-stack('Georgia')
+$font-sans-bold = 'Alte Haas Grotesk Bold', font-stack('Helvetica')
 
 // ******************************************************
 
@@ -53,6 +56,14 @@ body
 .font-serif
   font-family: $font-serif
 
+.font-sans-bold
+  font-family: $font-sans-bold
+  font-weight: bold
+
+.font-serif-italic
+  font-family: $font-serif-italic
+  font-style: italic
+
 .font-larger
   font-size: $font-size-larger
 
@@ -68,7 +79,7 @@ body
 
 $color-black = rgb(0, 0, 0)
 $color-white = rgb(255, 255, 255)
-$color-blue = rgb(15, 40, 250)
+$color-blue = rgb(69, 79, 255)
 $color-grey = #CBCBCB
 $color-yellow = rgb(255, 250, 150)
 $color-grey-dark = rgb(68, 68, 68)

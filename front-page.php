@@ -75,8 +75,8 @@ if ( $program_query->have_posts() ) {
                   <?php echo !empty($venue) ? $venue : '&nbsp;'; ?>
                 </div>
                 <div class="grid-item item-s-8 item-m-9">
-                  <?php echo ($qa === 'qa') ? 'Q & A' : ''; ?>
-                  <?php echo ($qa === 'qa_with') ? 'Q & A con traducción' : ''; ?>
+                  <?php echo ($qa === 'qa') ? 'Q&A' : ''; ?>
+                  <?php echo ($qa === 'qa_with') ? 'Q&A con traducción' : ''; ?>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ if ( $program_query->have_posts() ) {
               Programa<?php echo !empty($order) ? ' ' . $order : ''; ?>
             </div>
             <div class="grid-item item-s-10">
-              <h2 class="font-size-large"><?php the_title(); ?></h2>
+              <h2 class="font-size-large font-serif"><?php the_title(); ?></h2>
             </div>
           </div>
           <div class="grid-row margin-bottom-small">
@@ -104,15 +104,17 @@ if ( $program_query->have_posts() ) {
         $year = get_post_meta($film_id, '_igv_film_year', true);
         $directors = wp_get_post_terms($film_id, 'director');
 ?>
-              <div class="grid-item item-s-6 grid-row margin-bottom-small">
-                <div class="grid-item item-s-12 no-gutter padding-bottom-micro">
-                  <a class="u-pointer js-open-film link-underline font-size-mid" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
+              <div class="grid-item item-s-6 grid-row padding-bottom-small">
+                <div class="grid-item item-s-12 no-gutter">
+                  <a class="u-pointer js-open-film link-underline font-size-mid font-serif-italic" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
                 </div>
-                <div class="grid-item item-s-12 no-gutter color-blue">
-                  <?php echo !empty($year) ? '(' . $year . ')' : '&nbsp;'; ?> • <?php echo !empty($duration) ? $duration . ' minutos' : '&nbsp;'; ?>
-                </div>
-                <div class="grid-item item-s-12 no-gutter color-blue">
-                  <?php echo !empty($directors) ? $directors[0]->name : '&nbsp;'; ?>
+                <div class="grid-item item-s-12 no-gutter color-blue align-self-end">
+                  <div>
+                    <?php echo !empty($year) ? '(' . $year . ')' : '&nbsp;'; ?> • <?php echo !empty($duration) ? $duration . ' minutos' : '&nbsp;'; ?>
+                  </div>
+                  <div>
+                    <?php echo !empty($directors) ? $directors[0]->name : '&nbsp;'; ?>
+                  </div>
                 </div>
               </div>
 <?php
