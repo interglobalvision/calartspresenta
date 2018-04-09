@@ -15,6 +15,20 @@ function scripts_and_styles_method() {
     'isAdmin' => $is_admin,
   );
 
+  wp_register_script('TweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js');
+  wp_enqueue_script('TweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js', '', '', true);
+
+  wp_register_script('ScrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js');
+  wp_enqueue_script('ScrollMagic', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js', '', '', true);
+
+  wp_register_script('EasePack', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js');
+  wp_enqueue_script('EasePack', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/easing/EasePack.min.js', '', '', true);
+
+  wp_register_script('ScrollMagicGSAP', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js');
+  wp_enqueue_script('ScrollMagicGSAP', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js', '', '', true);
+
+
+
   wp_register_script('javascript-main', $javascriptMain);
   wp_localize_script('javascript-main', 'WP', $javascriptVars);
   wp_enqueue_script('javascript-main', $javascriptMain, '', '', true);
