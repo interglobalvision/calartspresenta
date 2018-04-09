@@ -51,7 +51,7 @@ if ( $program_query->have_posts() ) {
     $film_array = get_post_meta($post->ID, '_igv_program_group', true);
 
     if (!empty($film_array)) {
-      $datetime = get_post_meta($post->ID, '_igv_program_date', true);
+      $datetime = get_post_meta($post->ID, '_igv_program_datetime', true);
       $venue = get_post_meta($post->ID, '_igv_program_venue', true);
       $qa = get_post_meta($post->ID, '_igv_program_qa', true);
       $order = get_post_meta($post->ID, '_igv_order_number', true);
@@ -135,7 +135,7 @@ wp_reset_postdata();
 if (!empty($long_description)) {
 ?>
       <div class="grid-row">
-        <div class="grid-item item-s-12 item-m-9 item-l-6 p-max-width">
+        <div class="grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width">
           <?php echo apply_filters('the_content', $long_description); ?>
         </div>
       </div>
