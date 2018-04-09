@@ -118,17 +118,10 @@ function igv_cmb_metaboxes() {
 	) );
 
   $program_metabox->add_field( array(
-		'name' => esc_html__( 'Date', 'cmb2' ),
-		'id'   => $prefix . 'program_date',
-		'type' => 'text_date',
-		// 'date_format' => 'Y-m-d',
-	) );
-
-  $program_metabox->add_field( array(
-		'name' => esc_html__( 'Start Time', 'cmb2' ),
-		'id'   => $prefix . 'program_time',
-		'type' => 'text_time',
-		// 'time_format' => 'H:i', // Set to 24hr format
+		'name' => esc_html__( 'Date & Time', 'cmb2' ),
+		'id'   => $prefix . 'program_datetime',
+		'type' => 'text_datetime_timestamp',
+    'time_format' => 'H:i',
 	) );
 
   $program_metabox->add_field( array(
