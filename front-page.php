@@ -148,7 +148,7 @@ if (!empty($long_description)) {
   <div id="close-overlay" class="u-pointer"></div>
   <div id="drawer" class="padding-top-large padding-bottom-large">
     <div class="drawer-container">
-      <div id="close-drawer" class="u-pointer">X</div>
+      <div id="close-drawer" class="u-pointer font-uppercase">Close</div>
       <div id="drawer-content">
       </div>
     </div>

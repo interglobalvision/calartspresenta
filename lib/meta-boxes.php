@@ -94,6 +94,13 @@ function igv_cmb_metaboxes() {
   	),
 	) );
 
+  $film_metabox->add_field( array(
+		'name'       => esc_html__( 'Program', 'cmb2' ),
+		'id'         =>  $prefix . 'program_id',
+		'type'       => 'post_search_text',
+    'post_type'   => array('program'),
+	) );
+
   $program_metabox = new_cmb2_box( array(
 		'id'            => $prefix . 'program_metabox',
 		'title'         => esc_html__( 'Details', 'cmb2' ),
