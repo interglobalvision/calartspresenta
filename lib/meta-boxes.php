@@ -40,7 +40,7 @@ function igv_cmb_metaboxes() {
    */
 
   $home_metabox = new_cmb2_box( array(
-		'id'            => $prefix . 'home-metabox',
+		'id'            => $prefix . 'home_metabox',
 		'title'         => esc_html__( 'Details', 'cmb2' ),
 		'object_types'  => array( 'page' ), // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
@@ -55,7 +55,7 @@ function igv_cmb_metaboxes() {
 
   $home_metabox->add_field( array(
 		'name'    => esc_html__( 'Long description', 'cmb2' ),
-		'id'      => $prefix . 'long_desc',
+		'id'      => $prefix . 'home_description',
 		'type'    => 'wysiwyg',
 		'options' => array(
 			'textarea_rows' => 30,
@@ -63,7 +63,7 @@ function igv_cmb_metaboxes() {
 	) );
 
   $film_metabox = new_cmb2_box( array(
-		'id'            => $prefix . 'film-metabox',
+		'id'            => $prefix . 'film_metabox',
 		'title'         => esc_html__( 'Details', 'cmb2' ),
 		'object_types'  => array( 'film', 'short' ), // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
