@@ -77,24 +77,95 @@ function igv_cmb_metaboxes() {
 	) );
 
   $film_metabox->add_field( array(
+		'name' => esc_html__( 'Duration in minutes', 'cmb2' ),
+		'id'   => $prefix . 'film_duration',
+		'type' => 'text',
+    'attributes' => array(
+  		'type' => 'number',
+  	),
+	) );
+
+  $film_metabox->add_field( array(
+		'name' => esc_html__( 'Year', 'cmb2' ),
+		'id'   => $prefix . 'film_year',
+		'type' => 'text',
+    'attributes' => array(
+  		'type' => 'number',
+  	),
+	) );
+
+  $program_metabox = new_cmb2_box( array(
+		'id'            => $prefix . 'program_metabox',
+		'title'         => esc_html__( 'Details', 'cmb2' ),
+		'object_types'  => array( 'program' ), // Post type
+		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+		// 'classes'    => 'extra-class', // Extra cmb2-wrap classes
+		// 'classes_cb' => 'yourprefix_add_some_classes', // Add classes through a callback.
+	) );
+
+  $program_metabox->add_field( array(
+		'name' => esc_html__( 'Order number', 'cmb2' ),
+		'id'   => $prefix . 'order_number',
+		'type' => 'text',
+    'attributes' => array(
+  		'type' => 'number',
+  	),
+	) );
+
+  $program_metabox->add_field( array(
 		'name' => esc_html__( 'Date', 'cmb2' ),
-		'id'   => $prefix . 'film_date',
+		'id'   => $prefix . 'program_date',
 		'type' => 'text_date',
 		// 'date_format' => 'Y-m-d',
 	) );
 
-  $film_metabox->add_field( array(
+  $program_metabox->add_field( array(
 		'name' => esc_html__( 'Start Time', 'cmb2' ),
-		'id'   => $prefix . 'film_time',
+		'id'   => $prefix . 'program_time',
 		'type' => 'text_time',
 		// 'time_format' => 'H:i', // Set to 24hr format
 	) );
 
-  $film_metabox->add_field( array(
-		'name' => esc_html__( 'Duration', 'cmb2' ),
-		'id'   => $prefix . 'film_duration',
-		'type' => 'text_small',
+  $program_metabox->add_field( array(
+		'name' => esc_html__( 'Venue', 'cmb2' ),
+		'id'   => $prefix . 'program_venue',
+		'type' => 'text',
 	) );
 
+  $program_metabox->add_field( array(
+		'name'    => esc_html__( 'Q & A', 'cmb2' ),
+		'id'      => $prefix . 'program_qa',
+		'type'    => 'radio',
+		'options' => array(
+			'qa' => esc_html__( 'Q & A', 'cmb2' ),
+			'qa_with' => esc_html__( 'Q & A with translation', 'cmb2' ),
+      'none' => esc_html__( 'None', 'cmb2' ),
+		),
+    'default' => 'none',
+	) );
+
+  $program_group_field_id = $program_metabox->add_field( array(
+		'id'          => $prefix . 'program_group',
+		'type'        => 'group',
+		'options'     => array(
+			'group_title'   => esc_html__( 'Film {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => esc_html__( 'Add Another Film', 'cmb2' ),
+			'remove_button' => esc_html__( 'Remove Film', 'cmb2' ),
+			'sortable'      => true, // beta
+			// 'closed'     => true, // true to have the groups closed by default
+		),
+	) );
+
+  $program_metabox->add_group_field( $program_group_field_id, array(
+		'name'       => esc_html__( 'Film', 'cmb2' ),
+		'id'         => 'film_id',
+		'type'       => 'post_search_text',
+    'post_type'   => array('film','short'),
+	) );
 }
 ?>

@@ -11,6 +11,9 @@ function add_menu_icons_styles(){
 #menu-posts-short .dashicons-admin-post:before {
     content: '\f235';
 }
+#menu-posts-program .dashicons-admin-post:before {
+    content: '\f126';
+}
 </style>
 
 <?php
@@ -103,4 +106,47 @@ function register_cpt_short() {
   );
 
   register_post_type( 'short', $args );
+}
+
+add_action( 'init', 'register_cpt_program' );
+
+function register_cpt_program() {
+
+  $labels = array(
+    'name' => _x( 'Programs', 'program' ),
+    'singular_name' => _x( 'Program', 'program' ),
+    'add_new' => _x( 'Add New', 'program' ),
+    'add_new_item' => _x( 'Add New Program', 'program' ),
+    'edit_item' => _x( 'Edit Program', 'program' ),
+    'new_item' => _x( 'New Program', 'program' ),
+    'view_item' => _x( 'View Program', 'program' ),
+    'search_items' => _x( 'Search Programs', 'program' ),
+    'not_found' => _x( 'No programs found', 'program' ),
+    'not_found_in_trash' => _x( 'No programs found in Trash', 'program' ),
+    'parent_item_colon' => _x( 'Parent Program:', 'program' ),
+    'menu_name' => _x( 'Programs', 'program' ),
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'hierarchical' => false,
+
+    'supports' => array( 'title', 'editor', 'thumbnail' ),
+
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'menu_position' => 5,
+
+    'show_in_nav_menus' => true,
+    'publicly_queryable' => true,
+    'exclude_from_search' => false,
+    'has_archive' => true,
+    'query_var' => true,
+    'can_export' => true,
+    'rewrite' => true,
+    'capability_type' => 'post'
+  );
+
+  register_post_type( 'program', $args );
 }
