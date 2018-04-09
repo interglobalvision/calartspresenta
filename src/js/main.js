@@ -42,13 +42,15 @@ class Site {
     $('.js-open-film').on('click', function() {
       var filmUrl = $(this).attr('data-url');
 
+      $('body').addClass('loading');
+
       $.ajax({
         url: filmUrl
       })
       .done(function( html ) {
         var content = $(html).find('#content').html();
         $('#drawer-content').html(content);
-        $('body').addClass('drawer-open');
+        $('body').removeClass('loading').addClass('drawer-open');
       });
     });
   }

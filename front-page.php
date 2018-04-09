@@ -56,7 +56,7 @@ if ( $program_query->have_posts() ) {
       $qa = get_post_meta($post->ID, '_igv_program_qa', true);
       $order = get_post_meta($post->ID, '_igv_order_number', true);
 ?>
-        <div id="program-<?php the_title; ?>" class="margin-bottom-basic">
+        <div id="program-<?php the_title; ?>" class="margin-bottom-mid">
           <div class="grid-row color-blue margin-bottom-small">
             <div class="grid-item item-s-10 offset-s-2 grid-row margin-bottom-tiny no-gutter">
               <div class="grid-item item-s-12 grid-row margin-bottom-tiny no-gutter">
@@ -132,6 +132,7 @@ if ( $program_query->have_posts() ) {
 wp_reset_postdata();
 ?>
 <?php
+/*
 if (!empty($long_description)) {
 ?>
       <div class="grid-row">
@@ -141,10 +142,14 @@ if (!empty($long_description)) {
       </div>
 <?php
 }
+*/
 ?>
     </div>
   </section>
 
+  <div id="loading-overlay" class="grid-row align-items-center justify-center">
+    <div id="loader"></div>
+  </div>
   <div id="close-overlay" class="u-pointer"></div>
   <div id="drawer" class="padding-top-large padding-bottom-large">
     <div class="drawer-container">
