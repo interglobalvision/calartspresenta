@@ -149,7 +149,7 @@ if (!empty($long_description)) {
   <div id="drawer" class="padding-top-large padding-bottom-large">
     <div class="drawer-container">
       <div id="close-drawer">
-        <a class="link-underline font-uppercase u-pointers">Close</a>
+        <a class="link-underline font-uppercase u-pointer">Close</a>
       </div>
       <div id="drawer-content">
       </div>
