@@ -58,7 +58,7 @@ function igv_cmb_metaboxes() {
 		'id'      => $prefix . 'long_desc',
 		'type'    => 'wysiwyg',
 		'options' => array(
-			'textarea_rows' => 15,
+			'textarea_rows' => 30,
 		),
 	) );
 
