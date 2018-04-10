@@ -25,7 +25,7 @@ if (have_posts()) {
 
         </div>
 
-        <div class="grid-item item-s-12 grid-row no-gutter align-items-center">
+        <div class="grid-item item-s-12 item-m-11 offset-m-1 grid-row no-gutter align-items-center padding-bottom-large">
           <div class="grid-item">
             <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-cineteca.png" />
           </div>
