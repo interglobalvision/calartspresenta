@@ -167,5 +167,21 @@ function igv_cmb_metaboxes() {
 		'type'       => 'post_search_text',
     'post_type'   => array('film','short'),
 	) );
+
+  $directory_metabox = new_cmb2_box( array(
+		'id'               => $prefix . 'director_metabox',
+		'title'            => esc_html__( 'Details', 'cmb2' ), // Doesn't output for term boxes
+		'object_types'     => array( 'term' ), // Tells CMB2 to use term_meta vs post_meta
+		'taxonomies'       => array( 'director' ), // Tells CMB2 which taxonomies should have these fields
+	) );
+
+  $directory_metabox->add_field( array(
+		'name'    => esc_html__( 'Director Bio', 'cmb2' ),
+		'id'      => $prefix . 'director_bio',
+		'type'    => 'wysiwyg',
+		'options' => array(
+			'textarea_rows' => 10,
+		),
+	) );
 }
 ?>
