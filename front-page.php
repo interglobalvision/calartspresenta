@@ -7,7 +7,7 @@ get_header();
 <main id="main-content">
   <section id="posts">
     <div class="container">
-      <div class="grid-row">
+      <div class="grid-row margin-bottom-mid">
 
 <?php
 if (have_posts()) {
@@ -19,19 +19,19 @@ if (have_posts()) {
     $long_description = get_post_meta($post_id, '_igv_home_description', true);
 ?>
 
-        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width padding-bottom-mid'); ?> id="post-<?php the_ID(); ?>">
+        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width'); ?> id="post-<?php the_ID(); ?>">
 
-          <?php the_content(); ?>
+          <div class="margin-bottom-mid"><?php the_content(); ?></div>
 
-        </div>
-
-        <div class="grid-item item-s-12 item-m-11 offset-m-1 grid-row no-gutter align-items-center padding-bottom-large">
-          <div class="grid-item">
-            <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-cineteca.png" />
+          <div class="grid-item item-s-12 item-m-11 offset-m-1 grid-row no-gutter align-items-center">
+            <div class="grid-item">
+              <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-cineteca.png" />
+            </div>
+            <div class="grid-item">
+              <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-calarts.png" />
+            </div>
           </div>
-          <div class="grid-item">
-            <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-calarts.png" />
-          </div>
+
         </div>
 
 <?php

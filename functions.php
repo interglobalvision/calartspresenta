@@ -15,9 +15,6 @@ function scripts_and_styles_method() {
     'isAdmin' => $is_admin,
   );
 
-  wp_register_script('Scrollto', '//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js');
-  wp_enqueue_script('Scrollto', '//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js', '', '', true);
-
   wp_register_script('TweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js');
   wp_enqueue_script('TweenMax', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js', '', '', true);
 

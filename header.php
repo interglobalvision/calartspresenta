@@ -30,10 +30,10 @@ get_template_part('partials/seo');
   <nav id="main-nav">
     <div class="grid-row">
       <div class="grid-item">
-        <a href="#programa" id="nav-programa" class="font-uppercase js-scroll-to">Programa</a>
+        <a href="#programa" id="nav-programa" class="nav-item font-uppercase js-scroll-to">Programa</a>
       </div>
       <div class="grid-item">
-        <a href="#intro" id="nav-intro" class="link-underline font-uppercase js-scroll-to">Intro</a>
+        <a href="#intro" id="nav-intro" class="nav-item font-uppercase js-scroll-to">Intro</a>
       </div>
     </div>
   </nav>

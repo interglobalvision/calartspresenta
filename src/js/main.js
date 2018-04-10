@@ -88,9 +88,13 @@ class Site {
     $link.on('click', function(event) {
       event.preventDefault();
 
-      var target = $(this).attr('href');
+      var target = $(this).attr('href')
+      var offset = $(target).offset().top + 1;
 
-      $(document).scrollTo($(target), 1000);
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth"
+      });
     });
   }
 
@@ -110,14 +114,14 @@ class Site {
     var scrollTop = $(window).scrollTop();
 
     if (scrollTop >= _this.programaOffset && _this.isIntro) {
-      _this.$navPrograma.addClass('link-underline');
-      _this.$navIntro.removeClass('link-underline');
+      _this.$navPrograma.addClass('nav-active');
+      _this.$navIntro.removeClass('nav-active');
       _this.isIntro = false;
     }
 
     if (scrollTop < _this.programaOffset && !_this.isIntro) {
-      _this.$navPrograma.removeClass('link-underline');
-      _this.$navIntro.addClass('link-underline');
+      _this.$navPrograma.removeClass('nav-active');
+      _this.$navIntro.addClass('nav-active');
       _this.isIntro = true;
     }
   }
