@@ -98,6 +98,11 @@ var Site = function () {
     $(window).resize(this.onResize.bind(this));
 
     $(document).ready(this.onReady.bind(this));
+
+    this.isIntro = true;
+    this.$navPrograma = $('#nav-programa');
+    this.$navIntro = $('#nav-intro');
+    this.programaOffset = $('#programa').offset().top;
   }
 
   _createClass(Site, [{
@@ -111,6 +116,8 @@ var Site = function () {
       this.bindAjax();
       this.bindCloseDrawer();
       this.initScrollMagic();
+      this.bindScrollTo();
+      this.bindScrolling();
     }
   }, {
     key: 'fixWidows',
@@ -159,6 +166,49 @@ var Site = function () {
       var scene = new ScrollMagic.Scene({
         duration: $(document).height()
       }).setTween(tween).addTo(controller);
+    }
+  }, {
+    key: 'bindScrollTo',
+    value: function bindScrollTo() {
+      var $link = $('.js-scroll-to');
+
+      $link.on('click', function (event) {
+        event.preventDefault();
+
+        var target = $(this).attr('href');
+
+        $(document).scrollTo($(target), 1000);
+      });
+    }
+  }, {
+    key: 'bindScrolling',
+    value: function bindScrolling() {
+      var _this = this;
+
+      _this.toggleNavUnderline();
+
+      $(document).on('scroll', function () {
+        _this.toggleNavUnderline();
+      });
+    }
+  }, {
+    key: 'toggleNavUnderline',
+    value: function toggleNavUnderline() {
+      var _this = this;
+
+      var scrollTop = $(window).scrollTop();
+
+      if (scrollTop >= _this.programaOffset && _this.isIntro) {
+        _this.$navPrograma.addClass('link-underline');
+        _this.$navIntro.removeClass('link-underline');
+        _this.isIntro = false;
+      }
+
+      if (scrollTop < _this.programaOffset && !_this.isIntro) {
+        _this.$navPrograma.removeClass('link-underline');
+        _this.$navIntro.addClass('link-underline');
+        _this.isIntro = true;
+      }
     }
   }]);
 

@@ -19,7 +19,7 @@ if (have_posts()) {
     $long_description = get_post_meta($post_id, '_igv_home_description', true);
 ?>
 
-        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 padding-bottom-mid p-max-width'); ?> id="post-<?php the_ID(); ?>">
+        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width'); ?> id="post-<?php the_ID(); ?>">
 
           <?php the_content(); ?>
 
@@ -43,7 +43,7 @@ $program_query = new WP_Query( $args );
 
 if ( $program_query->have_posts() ) {
 ?>
-      <section class="padding-bottom-mid">
+      <section id="programa" class="padding-bottom-mid padding-top-mid">
 <?php
 	while ( $program_query->have_posts() ) {
 		$program_query->the_post();

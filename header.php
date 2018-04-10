@@ -26,9 +26,21 @@ get_template_part('partials/seo');
 <body <?php body_class(); ?>>
 <!--[if lt IE 9]><p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
-<section id="main-container" class="padding-top-large padding-bottom-large">
+<section id="main-container" class="padding-bottom-large">
+  <nav id="main-nav">
+    <div class="grid-row">
+      <div class="grid-item">
+        <a href="#programa" id="nav-programa" class="font-uppercase js-scroll-to">Programa</a>
+      </div>
+      <div class="grid-item">
+        <a href="#intro" id="nav-intro" class="link-underline font-uppercase js-scroll-to">Intro</a>
+      </div>
+    </div>
+  </nav>
 
-  <header id="header">
+  <div id="intro"></div>
+
+  <header id="header" class="padding-top-large">
     <div class="container">
       <div class="grid-row padding-bottom-basic">
         <div class="grid-item">
