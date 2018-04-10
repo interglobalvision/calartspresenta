@@ -125,7 +125,7 @@ var Site = function () {
   }, {
     key: 'bindAjax',
     value: function bindAjax() {
-      $('.js-open-film').on('click', function () {
+      $('.js-open-drawer').on('click', function () {
         var filmUrl = $(this).attr('data-url');
 
         $('body').addClass('loading');

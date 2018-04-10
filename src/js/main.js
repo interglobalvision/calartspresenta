@@ -39,7 +39,7 @@ class Site {
   }
 
   bindAjax() {
-    $('.js-open-film').on('click', function() {
+    $('.js-open-drawer').on('click', function() {
       var filmUrl = $(this).attr('data-url');
 
       $('body').addClass('loading');

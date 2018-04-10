@@ -86,7 +86,45 @@ if ( $program_query->have_posts() ) {
               Programa<?php echo !empty($order) ? ' ' . $order : ''; ?>
             </div>
             <div class="grid-item item-s-10 item-l-8">
-              <h2 class="font-size-large font-serif"><?php the_title(); ?></h2>
+<?php
+      $directors_array = array();
+
+      foreach($film_array as $film_post) {
+        $film_id = $film_post['film_id'];
+
+        $directors = wp_get_post_terms($film_id, 'director');
+
+        if (!empty($directors)) {
+          array_push($directors_array, $directors[0]->name);
+        }
+      }
+
+      $directors_unique = array_unique($directors_array);
+
+      if (!empty($directors_unique)) {
+        $directors_length = count($directors_unique);
+        $d = 1;
+
+        echo '<h2 class="font-size-large font-serif">';
+
+        foreach($directors_unique as $director_name) {
+          $director_term = get_term_by('name', $director_name, 'director');
+          $permalink = get_term_link($director_term);
+
+          if ($directors_length === 1) {
+            echo '<a class="u-pointer js-open-drawer hover-black" data-url="' . $permalink . '">' . $director_name . '</a>';
+          } else if ($d < $directors_length) {
+            echo '<a class="u-pointer js-open-drawer hover-black" data-url="' . $permalink . '">' . $director_name . '</a>, ';
+          } else if ($d === $directors_length) {
+            echo '& <a class="u-pointer js-open-drawer hover-black" data-url="' . $permalink . '">' . $director_name . '</a>';
+          }
+
+          $d++;
+        }
+
+        echo '</h2>';
+      }
+?>
             </div>
           </div>
           <div class="grid-row margin-bottom-small">
@@ -106,7 +144,7 @@ if ( $program_query->have_posts() ) {
 ?>
               <div class="grid-item item-s-6 grid-row padding-bottom-small">
                 <div class="grid-item item-s-12 no-gutter">
-                  <a class="u-pointer js-open-film link-underline font-size-mid font-serif-italic" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
+                  <a class="u-pointer js-open-drawer link-underline font-size-mid font-serif-italic hover-black" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
                 </div>
                 <div class="grid-item item-s-12 no-gutter color-blue align-self-end">
                   <div>
