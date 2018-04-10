@@ -142,11 +142,11 @@ if ( $program_query->have_posts() ) {
         $year = get_post_meta($film_id, '_igv_film_year', true);
         $directors = wp_get_post_terms($film_id, 'director');
 ?>
-              <div class="grid-item item-s-6 grid-row padding-bottom-small">
+              <div class="grid-item item-s-6 grid-row padding-bottom-small align-content-start">
                 <div class="grid-item item-s-12 no-gutter">
                   <a class="u-pointer js-open-drawer link-underline font-size-mid font-serif-italic hover-black" data-url="<?php echo $permalink; ?>"><?php echo $title; ?></a>
                 </div>
-                <div class="grid-item item-s-12 no-gutter color-blue align-self-end">
+                <div class="grid-item item-s-12 no-gutter color-blue">
                   <div>
                     <?php echo !empty($year) ? '(' . $year . ')' : '&nbsp;'; ?> • <?php echo !empty($duration) ? $duration . ' minutos' : '&nbsp;'; ?>
                   </div>
