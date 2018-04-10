@@ -19,10 +19,19 @@ if (have_posts()) {
     $long_description = get_post_meta($post_id, '_igv_home_description', true);
 ?>
 
-        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width'); ?> id="post-<?php the_ID(); ?>">
+        <div <?php post_class('grid-item item-s-12 item-m-9 offset-m-1 item-l-6 p-max-width padding-bottom-mid'); ?> id="post-<?php the_ID(); ?>">
 
           <?php the_content(); ?>
 
+        </div>
+
+        <div class="grid-item item-s-12 grid-row no-gutter align-items-center">
+          <div class="grid-item">
+            <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-cineteca.png" />
+          </div>
+          <div class="grid-item">
+            <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-calarts.png" />
+          </div>
         </div>
 
 <?php

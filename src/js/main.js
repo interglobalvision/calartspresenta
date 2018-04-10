@@ -1,5 +1,5 @@
 /* jshint esversion: 6, browser: true, devel: true, indent: 2, curly: true, eqeqeq: true, futurehostile: true, latedef: true, undef: true, unused: true */
-/* global $, document, ScrollMagic, TweenMax, Cubic, jQuery */
+/* global $, document, ScrollMagic, TweenMax, Cubic */
 
 // Import dependencies
 import lazySizes from 'lazysizes';
@@ -62,7 +62,7 @@ class Site {
   }
 
   bindCloseDrawer() {
-    $('#close-drawer, #close-overlay').on('click', function(e) {
+    $('#close-drawer, #close-overlay').on('click', function() {
       $('body').removeClass('drawer-open');
     });
   }
@@ -72,10 +72,10 @@ class Site {
   	var controller = new ScrollMagic.Controller();
 
   	// build tween
-  	var tween = TweenMax.to("#light", 1, {ease: Cubic.easeInOut, rotation: 7, scaleX: 5, scaleY: 0.5, opacity: 1, transformOrigin:'0% 50%'});
+  	var tween = TweenMax.to("#light", 1, {ease: Cubic.easeInOut, rotation: 6, scaleX: 5, scaleY: 0.5, opacity: 1, transformOrigin:'0% 50%'});
 
   	// build scene and set duration to window height
-  	var scene = new ScrollMagic.Scene({
+  	new ScrollMagic.Scene({
       duration: $(document).height(),
     })
 		.setTween(tween)
@@ -91,7 +91,7 @@ class Site {
       var target = $(this).attr('href');
 
       $(document).scrollTo($(target), 1000);
-    })
+    });
   }
 
   bindScrolling() {
