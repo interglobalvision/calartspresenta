@@ -66,7 +66,7 @@ class Site {
   	var controller = new ScrollMagic.Controller();
 
   	// build tween
-  	var tween = TweenMax.to("#light", 1, {ease: Cubic.easeInOut, rotation: 2, scaleX: 5, scaleY: 0.5, transformOrigin:'0% 50%'});
+  	var tween = TweenMax.to("#light", 1, {ease: Cubic.easeInOut, rotation: 7, scaleX: 5, scaleY: 0.5, opacity: 1, transformOrigin:'0% 50%'});
 
   	// build scene and set duration to window height
   	var scene = new ScrollMagic.Scene({
