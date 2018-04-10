@@ -56,7 +56,7 @@ if ( $program_query->have_posts() ) {
       $qa = get_post_meta($post->ID, '_igv_program_qa', true);
       $order = get_post_meta($post->ID, '_igv_order_number', true);
 ?>
-        <div id="program-<?php the_title; ?>" class="margin-bottom-mid">
+        <div id="program-<?php the_title; ?>" class="margin-bottom-large">
           <div class="grid-row color-blue margin-bottom-small">
             <div class="grid-item item-s-10 offset-s-2 grid-row margin-bottom-tiny no-gutter">
               <div class="grid-item item-s-12 grid-row margin-bottom-tiny no-gutter">
@@ -85,7 +85,7 @@ if ( $program_query->have_posts() ) {
             <div class="grid-item item-s-2 color-blue align-self-center">
               Programa<?php echo !empty($order) ? ' ' . $order : ''; ?>
             </div>
-            <div class="grid-item item-s-10">
+            <div class="grid-item item-s-10 item-l-8">
               <h2 class="font-size-large font-serif"><?php the_title(); ?></h2>
             </div>
           </div>
