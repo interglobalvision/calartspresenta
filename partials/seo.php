@@ -30,6 +30,8 @@ if (isset($options['og_image'])) {
   echo '<meta property="og:image" content="' . $ogImage[0] . '" />';
 } else {*/
 echo '<meta property="og:image" content="' . get_stylesheet_directory_uri() . '/img/dist/opengraph.jpg" />';
+echo '<meta property="og:image:width" content="1200" />';
+echo '<meta property="og:image:height" content="630" />';
 /*}*/
 
 if (is_home()) {
