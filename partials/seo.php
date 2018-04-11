@@ -45,6 +45,3 @@ if (is_home()) {
 <?php
 }
 ?>
-  <meta property="og:image" content="http://globiecloud.net/calartspresenta/wp-content/themes/calartspresenta-theme/dist/img/opengraph.jpg" />;
-  <meta property="og:image:width" content="1200" />;
-  <meta property="og:image:height" content="630" />;

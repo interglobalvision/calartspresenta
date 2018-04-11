@@ -10,6 +10,10 @@
 get_template_part('partials/globie');
 get_template_part('partials/seo');
 ?>
+  <meta property="og:image" content="http://globiecloud.net/calartspresenta/wp-content/themes/calartspresenta-theme/dist/img/opengraph.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
   <link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/dist/img/favicon.png">
