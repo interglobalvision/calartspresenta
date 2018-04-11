@@ -44,7 +44,7 @@ get_template_part('partials/seo');
     <div class="container">
       <div class="grid-row padding-bottom-basic">
         <div class="grid-item">
-          <h1 class="font-size-mid color-blue"><a href="<?php echo home_url(); ?>">CALARTS presenta...</a></h1>
+          <h1 class="font-size-mid color-blue"><a href="<?php echo home_url(); ?>">CalArts presenta...</a></h1>
         </div>
       </div>
     </div>
