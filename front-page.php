@@ -23,12 +23,15 @@ if (have_posts()) {
 
           <div class="margin-bottom-mid"><?php the_content(); ?></div>
 
-          <div class="grid-item item-s-12 item-m-11 offset-m-1 grid-row no-gutter align-items-center">
+          <div class="grid-item item-s-12 grid-row no-gutter align-items-center">
             <div class="grid-item">
               <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-cineteca.png" />
             </div>
             <div class="grid-item">
               <img class="sponsor-logo" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-calarts.png" />
+            </div>
+            <div class="grid-item">
+              <img class="sponsor-logo-igv" src="<?php bloginfo('stylesheet_directory'); ?>/dist/img/logo-igv.png" />
             </div>
           </div>
 
