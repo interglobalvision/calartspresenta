@@ -33,7 +33,7 @@ get_template_part('partials/seo');
         <a href="#programa" id="nav-programa" class="nav-item font-uppercase js-scroll-to">Programa</a>
       </div>
       <div class="grid-item">
-        <a href="#intro" id="nav-intro" class="nav-item font-uppercase js-scroll-to">Intro</a>
+        <a href="#intro" id="nav-intro" class="nav-item nav-active font-uppercase js-scroll-to">Intro</a>
       </div>
     </div>
   </nav>
